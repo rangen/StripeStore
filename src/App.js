@@ -1,12 +1,15 @@
 import React from 'react';
-import './App.css';
+import Store, { StoreProvider } from './store';
+import MainContainer from './containers/MainContainer';
 
-function App() {
+const store = new Store();
+
+const App = () => {
   return (
-    <>
-
-    </>
+    <StoreProvider store={store}>
+      <MainContainer/>
+    </StoreProvider>
   );
-}
+};
 
 export default App;
