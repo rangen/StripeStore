@@ -9,6 +9,7 @@ const MainContainer = observer(() => {
         <>
             {store.isAdmin ? "Yes, Admin" : "No, Not Admin"}<br />
             <button onClick={()=>store.isAdmin = !store.isAdmin}>Toggle isAdmin</button>
+            <h3>{`The current time is: ${store.time}`}</h3>
         </>
     )
 });

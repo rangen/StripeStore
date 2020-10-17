@@ -3,6 +3,7 @@ import { makeAutoObservable, autorun, runInAction } from 'mobx';
 
 export default class Store {
     isAdmin = true;
+    time = new Date();
 
     constructor(){
         makeAutoObservable(this);
