@@ -7,8 +7,8 @@ const MainContainer = observer(() => {
 
     return (
         <>
-            {store.isAdmin ? "Yes, Admin" : "No, Not Admin"}
-            <button onClick={()=>store.isAdmin = !store.isAdmin}>Change Status</button>
+            {store.isAdmin ? "Yes, Admin" : "No, Not Admin"}<br />
+            <button onClick={()=>store.isAdmin = !store.isAdmin}>Toggle isAdmin</button>
         </>
     )
 });
