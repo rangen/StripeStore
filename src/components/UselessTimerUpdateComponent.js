@@ -6,7 +6,7 @@ const UselessTimerUpdateComponent = () => {
 
     useEffect(()=> {
         let timer = setInterval(()=> {
-            store.time = new Date();
+            store.time = new Date().toLocaleTimeString();
         }, 1000);
         
         return () => clearInterval(timer);

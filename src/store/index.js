@@ -3,7 +3,7 @@ import { makeAutoObservable, autorun, runInAction } from 'mobx';
 
 export default class Store {
     isAdmin = true;
-    time = new Date();
+    time = new Date().toLocaleTimeString();
 
     constructor(){
         makeAutoObservable(this);
