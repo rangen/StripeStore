@@ -1,13 +1,23 @@
 import React, { createContext, useContext } from 'react';
-import { makeAutoObservable, autorun, runInAction } from 'mobx';
+import { makeAutoObservable, action, observable } from 'mobx';
 
 export default class Store {
-    isAdmin = true;
-    time = new Date().toLocaleTimeString();
+    view = 'home' // home signup login
 
     constructor(){
-        makeAutoObservable(this);
+        makeAutoObservable(this, {
+            view:       observable,
+            changeView: action
+        });
     }
+
+    changeView(newView) {
+        if (this.view === newView) return;
+        
+        this.view = newView;
+    }
+
+
 }
 
 const StoreContext = createContext();

@@ -1,17 +1,21 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../store';
+import HomeView from './HomeView';
+import OwnerSignup from './OwnerSignup';
+import OwnerLogin from './OwnerLogin';
+
 
 const MainContainer = observer(() => {
     const store = useStore();
 
     return (
         <>
-            {store.isAdmin ? "Yes, Admin" : "No, Not Admin"}<br />
-            <button onClick={()=>store.isAdmin = !store.isAdmin}>Toggle isAdmin</button>
-            <h3>{`The current time is: ${store.time}`}</h3>
+            {store.view === 'home' && <HomeView />}
+            {store.view === 'signup' && <OwnerSignup />}
+            {store.view === 'login' && <OwnerLogin />}
         </>
     )
 });
 
-export default MainContainer
+export default MainContainer;
