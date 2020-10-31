@@ -16,7 +16,7 @@ export default class Store {
         
         this.view = newView;
     }
-
+    
 
 }
 
